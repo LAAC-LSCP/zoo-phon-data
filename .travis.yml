@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+install:
+  - pip install git+https://github.com/LAAC-LSCP/ChildRecordsData.git
+  - wget https://raw.githubusercontent.com/LAAC-LSCP/empty-dataset/master/check_dataset.py
+script:
+  - python check_dataset.py
+  - child-project validate . --ignore-files
