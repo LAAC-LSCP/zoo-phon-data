@@ -39,6 +39,8 @@ high_volubility_samples = pd.concat(high_volubility_samples)
 
 os.makedirs('samples/gold/high', exist_ok = True)
 high_volubility_samples.to_csv('samples/gold/high/samples.csv', index = False)
+high_volubility_sampler.segments = high_volubility_samples
+high_volubility_sampler.export_audio('samples/gold/high/audio')
 
 random_sampler = RandomVocalizationSampler(
     project,
@@ -49,3 +51,4 @@ random_sampler = RandomVocalizationSampler(
 random_sampler.sample()
 os.makedirs('samples/gold/random', exist_ok = True)
 random_sampler.segments[['recording_filename', 'segment_onset', 'segment_offset']].to_csv('samples/gold/random/samples.csv', index = False)
+random_sampler.export_audio('samples/gold/random/audio')
