@@ -6,3 +6,6 @@ ci/* annex.largefiles=nothing
 metadata/* annex.largefiles=nothing
 recordings/* annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 samples/* annex.largefiles=nothing
+samples/high_chunked/* annex.largefiles=nothing
+samples/gold/*/*.csv annex.largefiles=nothing
+README annex.largefiles=nothing
